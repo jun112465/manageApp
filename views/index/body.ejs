@@ -1,0 +1,34 @@
+<div id='container'>
+    <%- include('../nav.ejs') %>
+    <!-- <h1><a href="/">HOME</a></h1> -->
+
+    <%- include('../title.ejs') %>
+    
+    <section>
+        <div>
+            <h2>총 보유액 : <%=total%></h2>
+            <h3>
+                <ul>
+                    <% for(let i=0; i<list.length; i++) { %>
+                        <li><%=list[i].ACCOUNT%> : <%=list[i].balance%></li>
+                    <%}%> 
+                </ul>
+            </h3>
+        </div>
+    </section>
+
+    <section id='section'>
+        <input id='box_button' type="button" value='make_a_box'>
+        <script>
+            let btn = document.getElementById('box_button');
+            btn.addEventListener('click', ()=>{
+                let box = document.createElement('div');
+                box.id = 'box';
+
+
+                let section = document.getElementById('section');
+                section.appendChild(box);
+            })
+        </script>
+    </section>
+</div>    

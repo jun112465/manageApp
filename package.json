@@ -1,0 +1,29 @@
+{
+  "name": "money-app",
+  "version": "1.0.0",
+  "description": "app for financial-ledging",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jun112465/moneyApp.git"
+  },
+  "keywords": [
+    "money"
+  ],
+  "author": "jun112465",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jun112465/moneyApp/issues"
+  },
+  "homepage": "https://github.com/jun112465/moneyApp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1"
+  }
+}

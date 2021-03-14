@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../index/head.ejs') %>
+    </head>
+    <body>
+        <div id='container'>
+            <%- include('../nav.ejs') %>
+            <!-- <h1><a href="/">HOME</a></h1> -->
+            <%- include('../title.ejs') %>
+            <section id='add'>
+                <form action="/add-process" method="post">
+                    <input type="text" name="id" placeholder="계좌이름">
+                    <input type="text" name="value" placeholder="1000">
+                    <input type="submit">
+                </form>
+            </section>
+
+            <h1 id='test'>testing</h1>
+        </div> 
+</html>

@@ -1,0 +1,82 @@
+*{
+    margin:0; padding:0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+}
+#container{
+    display: inline-flex;
+    flex-direction: column;
+    width: 1000px;  
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+
+    font-size: 20px;
+}
+
+/* navigation */
+nav{
+    box-sizing: border-box;
+    border-bottom: 2px solid coral;    
+    text-decoration: none;      
+    list-style: none;
+    height: 50px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-around;  
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    background-color: rgb(56, 58, 58);
+}
+nav li{
+    padding: 15px;
+    cursor: pointer;
+
+    list-style-type: none;
+}
+nav a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+nav a:hover{
+    color: rgb(104, 199, 236);
+}
+
+/* title */
+.title{
+    margin: 13px;
+    
+}
+/* section */
+section{
+    margin-top: 10px;
+}
+
+
+section#delete ul{
+    display: inline;
+}
+section#delete form{
+    margin:10px;
+}
+section#delete input{
+    position: relative;
+    font-size: 21px;
+    top: -1px;
+}
+
+div#box{
+    background-color: rgb(218, 180, 110);
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <%- include ('../index/head.ejs') %>
+    </head>
+    <body>
+        <div id='container'>
+            <%- include('../nav.ejs') %>
+            <!-- <h1><a href="/">HOME</a></h1> -->
+            <%- include('../title.ejs') %>
+            <section id='delete'>
+                <li>
+                    <% for(let i=0; i<list.length; i++){ %>
+                        <form action="/delete-process" method='post'>
+                            <ul><%=list[i].ACCOUNT%> : <%=list[i].balance%></ul>
+                            <input type="hidden" name="id" value="<%=list[i].ACCOUNT%>" >
+                            <input type="submit">
+                        </form>
+                    <% } %>
+                </li>
+            </section>
+        </div> 
+    </body>
+</html>
+
+<!-- ejs 컴파일 오류는 문법 오류일 가능성 높다, 인터넷으로 최신문법을 확인하자-->

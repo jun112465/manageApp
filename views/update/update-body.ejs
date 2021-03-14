@@ -1,0 +1,18 @@
+<div id='container'>
+    <%- include('../nav.ejs') %>
+    <!-- <h1><a href="/">HOME</a></h1> -->
+    <%- include('../title.ejs') %>
+
+    <section id='add'>
+        <li>
+            <% for(let i=0; i<list.length; i++){ %>
+                <form action="/update-process" method='post'>
+                    <ul><%=list[i].ACCOUNT%> : <%=list[i].balance%></ul>
+                    <input type="hidden" name="id" value="<%=list[i].ACCOUNT%>" >
+                    <input type="text" name='money' placeholder='1000'>
+                    <input type="submit">
+                </form>
+            <% } %>
+        </li>
+    </section>
+</div> 

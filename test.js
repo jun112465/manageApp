@@ -22,3 +22,13 @@ DB1.query('Select * from bank', (err, rows)=>{
     db.query('Insert into test(balance) values(7000)');
 })
 
+db.query('Show tables', (err, tables)=>{
+    console.log(tables);
+})
+
+
+        // < section >
+        //     <% for (let i = 0; i < tables.length; i++) { %>
+        //         <div><%=tables[i].name%></div>
+        //     <% } %> 
+        // </section >

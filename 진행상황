@@ -12,3 +12,10 @@ control 모듈의 total 함수 구현 완료
 #210302
 수정하기 완성하기 - 완성 
 index 페이지 들어갈때마다 total값 주기 귀찮음, 해결방법이 없을까?
+
+#210315 새벽
+database에서 날짜별로 data 테이블에 레코드를 만든다.
+ex> date   necessary  shopping   
+ex> 210315   200          3000
+
+이 데이터를 ejs로 옮기는 작업을 하는중이다.

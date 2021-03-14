@@ -75,8 +75,11 @@ section#delete input{
     top: -1px;
 }
 
-div#box{
-    background-color: rgb(218, 180, 110);
-    width: 200px;
-    height: 200px;
+section div.box{
+    display: inline-block;
+    font-size:12px;
+    width:100px;
+    height:100px;
+    padding-top:30px;
+    background-color:rgb(236, 231, 162);    
 }

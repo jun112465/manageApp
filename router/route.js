@@ -14,7 +14,8 @@ let db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '1q2w3e4r!',
-    database: 'date'
+    database: 'date',
+    dateStrings: 'date'
 })
 db.connect();
 
@@ -22,13 +23,12 @@ router.get('/', (req,res)=>{
     DB.query('Select * from bank', (err, rows)=>{
         let total = 0;
         let list = rows;
+        for(i in rows) total += rows[i].balance;
         
-        for(i in rows) total += rows[i].balance
-
         res.render('index.ejs', {
             title: "MANAGE MY MONEY",
             total: total,
-            list: list
+            list: list,
         })
     })
 })
@@ -91,6 +91,22 @@ router.post('/add-process', (req,res)=>{
     DB.query(sql, (err, result)=>{
         if(err) throw err;
         res.redirect('/');
+    })
+})
+
+router.get('/box', (req,res)=>{
+    db.query('Select * from data', (err,records)=>{
+        let total = 0;
+        console.log(records[0]);
+        let arr = Object.values(records[0]); //Object 객체는 객체와 관련된 메소드를 모아놓은 객체
+        for(let i=1; i<arr.length; i++){
+            total += arr[i];
+        }
+        console.log(arr);
+        res.render('./box/box.ejs', {
+            records: records,
+            total: total
+        });
     })
 })
 

@@ -4,4 +4,52 @@
 <body>
     <%- include('update-body.ejs') %>
 </body>
+<script>
+    function addForm(){
+        return `
+            <form action='/box_update' method='post'>
+                <input type='text' placholder='1000'>
+                <select name='attribute'>
+                    <option value='necessary' selected >생필품</option>
+                    <option value='pleasure'>유흥</option>
+                    <option value='shopping'>쇼핑</option>
+                </select>
+                <input type='submit' value='전송'>
+            </form>    
+        `
+    }
+    window.addEventListener('DOMContentLoaded', ()=>{
+        // let box = document.getElementById('box');
+        // let boxes = document.getElementsByClassName('box');
+        // console.log(boxes.length);
+        // for (i = 0; i < boxes.length; i++) {
+        //     let b = boxes[i];
+        //     b.addEventListener('click', (e)=>{
+        //         b.style.width = '300px';
+        //         b.style.height = '300px';
+        //         let f = document.createElement('div');
+        //         f.innerHTML = addForm();
+        //         b.appendChild(f);
+        //     });
+        // }
+            let boxs = document.getElementsByClassName('box');
+            for(let i=0; i<boxs.length; i++){
+                let b = boxs[i];
+                b.addEventListener('mouseover', (e)=>{
+                    b.style.width = '300px';
+                    b.style.height = '300px';
+
+                    let formEl = b.nextSibling;
+                    formEl.style.display = "block";
+                })
+                b.addEventListener('mouseout', (e)=>{
+                    b.style.width = '100px';
+                    b.style.height = '100px';
+
+                    let formEl = b.nextSibling;
+                    formEl.style.display = "hidden";
+                })
+            }
+    })
+</script>
 </html>

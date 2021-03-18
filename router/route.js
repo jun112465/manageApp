@@ -34,9 +34,20 @@ router.get('/', (req,res)=>{
 })
 router.get('/update', (req,res)=>{
     DB.query('Select * from bank', (err, rows)=>{
-        res.render('./update/update.ejs', {
-            title: "UPDATE",
-            list: rows,
+        db.query('Select * from data', (err, records) => {
+            let total = 0;
+            console.log(records[0]);
+            let arr = Object.values(records[0]); //Object 객체는 객체와 관련된 메소드를 모아놓은 객체
+            for (let i = 1; i < arr.length; i++) {
+                total += arr[i];
+            }
+            console.log(arr);
+            res.render('./update/update.ejs', {
+                title: "UPDATE",
+                list: rows,
+                records: records,
+                total: total
+            });
         })
     })
 })
@@ -53,6 +64,8 @@ router.post('/update-process', (req,res)=>{
             res.redirect('/');
         })
 })
+
+
 
 router.get('/delete', (req,res)=>{
     DB.query('select * from bank', (err, rows, fields)=>{
@@ -94,7 +107,7 @@ router.post('/add-process', (req,res)=>{
     })
 })
 
-router.get('/box', (req,res)=>{
+router.get('/error_page', (req,res)=>{
     db.query('Select * from data', (err,records)=>{
         let total = 0;
         console.log(records[0]);
@@ -103,12 +116,37 @@ router.get('/box', (req,res)=>{
             total += arr[i];
         }
         console.log(arr);
-        res.render('./box/box.ejs', {
+        res.render('./error.ejs', {
             records: records,
             total: total
         });
     })
 })
 
+router.post('/add_date', (req,res)=>{
+    console.log("url moved");
+    db.query('insert into data(date) values(curdate())', (err)=>{
+        if(err) {
+            console.log(err);
+            res.render('./error.ejs', {
+                errMsg: "Same date already registered"
+            })
+        }
+        else res.render('/update/update.ejs');
+    });
+})
+
+router.post('/box_update', (req, res) => {
+    console.log("url moved");
+    db.query('insert into data(date) values(curdate())', (err) => {
+        if (err) {
+            console.log(err);
+            res.render('./error.ejs', {
+                errMsg: "Same date already registered"
+            })
+        }
+        res.render('/update/update.ejs');
+    });
+})
 
 module.exports = router;

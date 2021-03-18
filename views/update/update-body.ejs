@@ -15,4 +15,29 @@
             <% } %>
         </li>
     </section>
+
+    <form action="/add_date" method='post'>
+        <input type="submit" value="add DATE">
+    </form>
+    <section id='box'>
+        <% for(let i=0; i<records.length; i++) {%>
+            <div class='box' id=<%=i %> > 
+                <div>
+                    <%=records[i].date%>
+                </div>
+                <div>total : <%=total%>
+                </div>
+                <form action='/box_update' method='post' id='formBox'>
+                    <input type='text' placholder='1000'>
+                    <select name='attribute'>
+                        <option value='necessary' selected>생필품</option>
+                        <option value='pleasure'>유흥</option>
+                        <option value='shopping'>쇼핑</option>
+                    </select>
+                    <input type='submit' value='전송'>
+                </form>
+            </div>
+        <%}%>
+
+    </section> 
 </div> 

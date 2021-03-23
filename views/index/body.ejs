@@ -4,13 +4,13 @@
 
     <%- include('../title.ejs') %>
     
-    <section>
+    <section id='home'>
         <div>
             <h2>총 보유액 : <%=total%></h2>
             <h3>
                 <ul>
                     <% for(let i=0; i<list.length; i++) { %>
-                        <li><%=list[i].ACCOUNT%> : <%=list[i].balance%></li>
+                        <li class='act-list'><%=list[i].ACCOUNT%> : <%=list[i].balance%></li>
                     <%}%> 
                 </ul>
             </h3>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../index/head.ejs') %>
+
+    <body>
+        <%- include('update-body.ejs') %>
+    </body>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            let formbox = document.getElementsByClassName('formBox');
+            for (i = 0; i < formbox.length; i++) formbox[i].style.display = 'none';
+
+            let boxs = document.getElementsByClassName('box');
+            for (let i = 0; i < boxs.length; i++) {
+                let b = boxs[i];
+                b.addEventListener('mouseover', (e) => {
+                    b.style.width = '200px';
+                    b.style.height = '200px';
+                    formbox[i].style.display = 'block';
+                })
+                b.addEventListener('mouseout', (e) => {
+                    b.style.width = '100px';
+                    b.style.height = '100px';
+                    formbox[i].style.display = 'none';
+                })
+            }
+        })
+    </script>
+
+</html>

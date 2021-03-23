@@ -2,67 +2,68 @@
     margin:0; padding:0;
     list-style: none;
     box-sizing: border-box;
-}
-
-body{
     text-align: center;
 }
+
 #container{
     display: inline-flex;
     flex-direction: column;
     width: 1000px;  
     border-left: 1px black solid;
     border-right: 1px black solid;
-
     font-size: 20px;
 }
 
-/* navigation */
-nav{
-    box-sizing: border-box;
-    border-bottom: 2px solid coral;    
-    text-decoration: none;      
-    list-style: none;
-    height: 50px;
-}
-nav ul{
-    display: flex;
-    list-style: none;
-    flex-direction: row;
-    justify-content: space-around;  
+
+/*navigation bar*/
+.main-menu{
     width: 100%;
-    height: 100%;
-
-    margin: 0;
-    padding: 0;
-    background-color: rgb(56, 58, 58);
 }
-nav li{
-    padding: 15px;
-    cursor: pointer;
-
-    list-style-type: none;
+.main-menu > li {
+    width:25%;
+    float: left;
 }
-nav a{
-    text-align: center;
-    text-decoration: none;
+.main-menu > li > a {
     color: white;
+    background-color: rgb(53, 51, 51);
+    display: block;
+    text-decoration: none;
+    padding: 13px;
+
+    border-bottom: 4px solid coral;
 }
-nav a:hover{
-    color: rgb(104, 199, 236);
+.sub-menu{
+    display: none;
+    background-color: rgb(53, 51, 51);
+    position: absolute;
+    z-index:1;
+    width: 250px;
 }
+.sub-menu > li > a{
+    display:block;
+    color: white;
+    border-top: 1px solid white;
+    text-decoration: none;
+    box-shadow: 0px 15px 30px 0px rgba(0,0,0,0.2);
+}
+.main-menu > li:hover .sub-menu{
+    display: block
+}
+
 
 /* title */
 .title{
-    margin: 13px;
-    
+    margin-top: 45px;
+    margin-bottom: 15px;
 }
 /* section */
 section{
     margin-top: 10px;
 }
-
-
+section#home li{
+    color: rgb(50, 50, 77);
+    margin: 11px;
+}
 section#delete ul{
     display: inline;
 }
@@ -75,15 +76,17 @@ section#delete input{
     top: -1px;
 }
 
-section div.box{
+section .box{
     display: inline-block;
     font-size:12px;
     width:100px;
     height:100px;
     padding-top:30px;
     color: white;
-    background-color:rgb(56, 58, 58);    
+    background-color:rgb(56, 58, 58); 
+    margin: 11px;   
 }
-section #formBox{    
-    display: none;
+
+section#add > li > ul{
+    margin: 11px;
 }

@@ -24,7 +24,7 @@ router.get('/', home);
 let update = require('./update');
 router.get('/updateAccount', update);
 router.get('/updateBox', update);
-router.post('update-process', update);
+router.post('/update-process', update);
 router.post('/box_update', update);
 router.post('/add_date', update);
 

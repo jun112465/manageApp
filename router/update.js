@@ -77,7 +77,7 @@ router.post('/box_update', (req, res) => {
         //res.redirect('/update');
     })
     DB.query(`Update bank Set balance=balance-${consumption} Where account='${account}'`, (err) => {
-        res.redirect('/');
+        res.redirect('/updateBox');
     });
 })
 

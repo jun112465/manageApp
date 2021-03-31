@@ -15,18 +15,18 @@
                 </div>
                 <form action='/box_update' method='post' class='formBox'>
                     <input type='hidden' name='date' value=<%=records[i].date%>>
-                    <input type='text' placholder='1000' name='consumption' autocomplete="off">
-                    <select name='attribute'>
+                    <input type='number' placeholder='1000' name='consumption' autocomplete="off" style='width:100px;'>
+                    <select name='attribute' style='width:100px;'>
                         <option value='necessary' selected>necessary</option>
                         <option value='pleasure'>pleasure</option>
                         <option value='shopping'>shopping</option>
                     </select>
-                    <select name="account">
+                    <select name="account" style='width:100px;'>
                         <% for(let i=0; i<list.length; i++) { %>
                             <option value=<%=list[i].ACCOUNT%>><%=list[i].ACCOUNT%></option>
                         <%}%>
                     </select>
-                    <input type='submit' value='전송'>
+                    <input type='submit' value='전송' style='width:100px;'>
                 </form>
             </div>
         <%}%>
